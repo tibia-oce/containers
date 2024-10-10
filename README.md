@@ -5,9 +5,23 @@
 
 This repository contains a collection of base Docker images that are used for container builds in other repositories. These images are designed to streamline the build process and ensure consistency across different projects by providing pre-configured environments with necessary dependencies.
 
-## Base Images Overview
+<br>
+
+## Usage
+
+To use one of these base images in your own project:
+
+1. Pull the image from GitHub Container Registry:
+   ```bash
+   docker pull ghcr.io/tibia-oce/blacktek-arm:latest
+
+<br>
+
+## Images Overview
 
 ### 1. **Blacktek (ARM64)**
+
+[![Blacktek Build](https://github.com/tibia-oce/containers/actions/workflows/blacktek.yml/badge.svg)](https://github.com/tibia-oce/containers/actions/workflows/blacktek.yml)
 
 - **Dockerfile**: `blacktek/Dockerfile.arm`
 - **Description**: This base image is used for building the ARM64 version of the Black-Tek game server. It includes essential tools such as `vcpkg`, `premake`, and common build dependencies required for cross-compilation to ARM64.
@@ -17,13 +31,3 @@ This repository contains a collection of base Docker images that are used for co
   - Premake for project generation.
   - Vcpkg for managing external dependencies.
   - ARM64 cross-compilation support.
-
-[![Blacktek Build](https://github.com/tibia-oce/containers/actions/workflows/blacktek.yml/badge.svg)](https://github.com/tibia-oce/containers/actions/workflows/blacktek.yml)
-
-## Usage
-
-To use one of these base images in your own project:
-
-1. Pull the image from GitHub Container Registry:
-   ```bash
-   docker pull ghcr.io/tibia-oce/blacktek-arm:latest
