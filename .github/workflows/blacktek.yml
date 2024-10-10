@@ -47,7 +47,7 @@ jobs:
 
     - name: Build and push (for tags)
       if: github.ref_type == 'tag'
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: ./blacktek    # Specify the path to the Dockerfile context
         file: ./blacktek/dockerfile  # Specify the path to the Dockerfile
@@ -57,7 +57,7 @@ jobs:
 
     - name: Build and push (for branches)
       if: github.event_name == 'pull_request' || github.ref_type == 'branch'
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: ./blacktek    # Specify the path to the Dockerfile context
         file: ./blacktek/dockerfile  # Specify the path to the Dockerfile
