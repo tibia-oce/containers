@@ -49,18 +49,18 @@ jobs:
       if: github.ref_type == 'tag'
       uses: docker/build-push-action@v6
       with:
-        context: ./blacktek    # Specify the path to the Dockerfile context
-        file: ./blacktek/dockerfile  # Specify the path to the Dockerfile
+        context: ./blacktek
+        file: ./blacktek/dockerfile
         push: true
-        tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
+        tags: ghcr.io/${{ github.repository }}/blacktek-arm:${{ github.ref_name }}
         platforms: linux/arm64
 
     - name: Build and push (for branches)
       if: github.event_name == 'pull_request' || github.ref_type == 'branch'
       uses: docker/build-push-action@v6
       with:
-        context: ./blacktek    # Specify the path to the Dockerfile context
-        file: ./blacktek/dockerfile  # Specify the path to the Dockerfile
+        context: ./blacktek
+        file: ./blacktek/dockerfile
         push: ${{ github.event_name != 'pull_request' }}
-        tags: ghcr.io/${{ github.repository }}:latest
+        tags: ghcr.io/${{ github.repository }}/blacktek-arm:latest
         platforms: linux/arm64
