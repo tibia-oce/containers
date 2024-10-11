@@ -31,3 +31,15 @@ To use one of these base images in your own project:
   - Premake for project generation.
   - Vcpkg for managing external dependencies.
   - ARM64 cross-compilation support.
+
+
+### 2. **OTClient (AMD4)**
+
+[![OTClient Build](https://github.com/tibia-oce/containers/actions/workflows/otclient.yml/badge.svg)](https://github.com/tibia-oce/containers/actions/workflows/otclient.yml)
+
+- **Build**: `docker build -f otclient/Dockerfile.amd`
+- **Description**: This base image is used for building the AMD64 version of Mehah's OTClient. It includes essential tools such as `vcpkg`, and common build dependencies required for linux AMD compilation.
+- **Registry**: Available at [ghcr.io/tibia-oce/otclient-amd](https://github.com/orgs/tibia-oce/packages/container/package/otclient-amd)
+  
+  **Key Dependencies:**
+  - Vcpkg for managing external dependencies.
